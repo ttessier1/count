@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build"
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<AssemblyName>Count</AssemblyName>
+		<OutputPath>Bin\</OutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="main.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System" />
+	</ItemGroup>
+	<Target Name="Build">
+		<MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />		<Csc Sources="@(Compile)" OutputAssembly="$(OutputPath)$(AssemblyName).exe" />
+		<Message Text="Build"></Message>
+	</Target>
+	<Target Name="Clean" >
+		<Delete Files="$(OutputPath)$(AssemblyName).exe" />
+		<Message Text="Clean"></Message>
+	</Target>
+	<Target Name="Rebuild" DependsOnTargets="Clean;Build">
+		<Message Text="Rebuild"></Message>
+	</Target>
+	<Target Name="GenerateRestoreGraphFile">
+		<Message Text="GenerateRestoreGraphFile"></Message>
+	</Target>
+</Project>

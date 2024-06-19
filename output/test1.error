@@ -1,0 +1,11 @@
+No Arguments
+count.exe [-w|--words] [-d|--distinct] [-c|--characters] [-h|--histogram] [-l|--lines] [[-f|--file] <filespec>] [-r|--recursive] [[-l|--lan] <en|fr|it|es>] message
+	-w|--words - count words
+	-d|--distinct - count distinct words
+	-c|--characters - count characters
+	-h|--histogram - histogram of characters
+	-l|--lines - count lines
+	-f|--file <filespec> - the file path or glob to work on
+	-r|--recursive - operate recursively
+	-l|--lang <en|fr|it|es> - set the language for the program
+	[message] - a message to operate on, if files are specified, this should not be
